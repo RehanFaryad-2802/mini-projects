@@ -1,35 +1,53 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from "react";
+import Button from "./components/Button";
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  let [color, setColor] = useState("Red");
+  const ColorsArr = [
+    "Red",
+    "Green",
+    "Blue",
+    "Orange",
+    "Purple",
+    "Pink",
+    "Coral",
+    "Gray",
+    "Black",
+    "Cyan",
+    "Magenta",
+    "Teal",
+  ];
+  let changeColor = (currColor) => {
+    setColor(currColor);
+  };
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div
+        className="f fdc jce aic"
+        style={{
+          backgroundColor: color,
+          height: "100vh",
+          width: "100vw",
+          paddingBottom: "5rem",
+        }}
+        >
+        <h1 className="wtc mb3r mh">Background changer using `react`.</h1>
+        <div
+          className="colorsBar container f jcc gap10 wbgc br10"
+          style={{ padding: "none !important" }}
+        >
+          {ColorsArr.map((singleColor) => (
+            <Button
+              key={singleColor}
+              color={color}
+              singleColor={singleColor}
+              changeColor={changeColor}
+            />
+          ))}
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
