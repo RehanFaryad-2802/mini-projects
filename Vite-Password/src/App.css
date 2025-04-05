@@ -1,0 +1,323 @@
+/* index.css (global styles) */
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(135deg, #0f0f13 0%, #1a1a2e 100%);
+  color: #f0f0f0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* App.css */
+.w-600 {
+  max-width: 600px;
+}
+
+.m0a {
+  margin: 0 auto;
+}
+
+.f {
+  display: flex;
+}
+
+.nowrap {
+  flex-wrap: nowrap;
+}
+
+.gap10 {
+  gap: 10px;
+}
+
+/* Main container - Glassmorphism */
+.w-600.m0a {
+  background: rgba(20, 20, 30, 0.6);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border-radius: 20px;
+  padding: 1rem 2rem;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 1px rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+}
+
+.w-600.m0a:hover {
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.4),
+    inset 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+/* Typography */
+h1 {
+  color: #fff;
+  text-align: center;
+  margin: 0 0 2rem 0;
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: -0.5px;
+  background: linear-gradient(90deg, #00dbde 0%, #fc00ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #00dbde 0%, #fc00ff 100%);
+  border-radius: 3px;
+}
+
+/* Password display - Futuristic input */
+input[type="text"] {
+  width: 100%;
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 1.5rem;
+  background: rgba(15, 15, 25, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  color: #fff;
+  font-size: 1.1rem;
+  font-family: 'Roboto Mono', monospace;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 
+    inset 0 2px 4px rgba(0, 0, 0, 0.2),
+    0 1px 2px rgba(255, 255, 255, 0.05);
+}
+
+input[type="text"]:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  background: rgba(20, 20, 30, 0.8);
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: #fc00ff;
+  box-shadow: 
+    0 0 0 3px rgba(252, 0, 255, 0.15),
+    inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Range slider - Modern style */
+.length {
+  margin-bottom: 2rem;
+}
+
+.length-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
+
+input[type="range"] {
+  width: 100%;
+  height: 6px;
+  -webkit-appearance: none;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  outline: none;
+  overflow: hidden;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 
+    -407px 0 0 400px #fc00ff,
+    0 2px 8px rgba(0, 0, 0, 0.3);
+  border: 2px solid #0f0f13;
+}
+
+/* Options - Minimalist toggle cards */
+.opt {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.opt-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.opt-box:hover {
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.opt-box label {
+  cursor: pointer;
+  flex-grow: 1;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Modern toggle switch */
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 44px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+input[type="checkbox"]::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  top: 2px;
+  left: 2px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+input[type="checkbox"]:checked {
+  background: linear-gradient(90deg, #00dbde 0%, #fc00ff 100%);
+}
+
+input[type="checkbox"]:checked::before {
+  left: calc(100% - 22px);
+}
+
+/* Buttons - Holographic effect */
+.generate-btn {
+  flex: 1;
+  padding: 1rem;
+  background: linear-gradient(90deg, rgba(0, 219, 222, 0.8) 0%, rgba(252, 0, 255, 0.8) 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 0.95rem;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.generate-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(0, 219, 222, 0.6) 0%, rgba(252, 0, 255, 0.6) 100%);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.generate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(252, 0, 255, 0.3);
+}
+
+.generate-btn:hover::before {
+  opacity: 1;
+}
+
+.generate-btn:active {
+  transform: translateY(0);
+}
+
+/* Special styling for word/unique options */
+.opt-box:nth-last-child(2),
+.opt-box:last-child {
+  background: rgba(15, 15, 25, 0.5);
+  border-left: 3px solid #00dbde;
+  margin-top: 0.5rem;
+  position: relative;
+}
+
+.opt-box:nth-last-child(2)::before,
+.opt-box:last-child::before {
+  content: 'Special';
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  background: #00dbde;
+  color: #0f0f13;
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 10px;
+  text-transform: uppercase;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .w-600.m0a {
+    padding: 1.5rem;
+    border-radius: 16px;
+  }
+  
+  h1 {
+    font-size: 1.75rem;
+  }
+  
+  .f.nowrap {
+    flex-direction: column;
+  }
+  
+  .gap10 {
+    gap: 0.75rem;
+  }
+  
+  .generate-btn {
+    width: 100%;
+  }
+}
+
+/* Animation for password change */
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+input[type="text"]:not([value=""]) {
+  animation: pulse 2s infinite ease-in-out;
+}
