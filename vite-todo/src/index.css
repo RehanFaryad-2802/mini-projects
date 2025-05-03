@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+@layer base {
+    body {
+      @apply bg-[#0D0D0D] text-gray-100 min-h-screen font-sans antialiased;
+      background-image: 
+        radial-gradient(at 50% 50%, rgba(39, 39, 42, 0.4) 0px, transparent 50%),
+        radial-gradient(at 82% 65%, rgba(139, 92, 246, 0.1) 0px, transparent 50%);
+    }
+  }
